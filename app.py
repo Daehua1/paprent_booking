@@ -138,6 +138,7 @@ def cancel_booking(booking_id):
         conn.execute("DELETE FROM bookings WHERE id = ?", (booking_id,))
     return redirect("/admin")
 
+init_db()  # ← 조건문 밖으로 빼기!
+
 if __name__ == "__main__":
-    init_db()
     app.run()
